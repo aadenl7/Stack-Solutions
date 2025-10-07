@@ -9,7 +9,7 @@ Financial Investment Website for Consulting Users on their Investment Decisions
     - [Proposal (Wiki)](Project%20Docs/Wiki/Proposal)
 
 - **In-Repo Drafts (reviewed via PRs)**
-  - [Design: User Stories & Acceptance](Project%20Docs/design/user-stories.md)
-  - [Design: Architecture & Components](Project%20Docs/design/architecture.md)
-  - [Design: Data & Content](Project%20Docs/design/data-content.md)
-  - [Design: Risks & Constraints](Project%20Docs/design/risks-constraints.md)
+  - [Design: User Stories & Acceptance](Project%20Docs/Wiki/Design/user-stories.md)
+  - [Design: Architecture & Components](Project%20Docs/Wiki/Design/Architecture.md)
+  - [Design: Data & Content](Project%20Docs/Wiki/Design/data-content.md)
+  - [Design: Risks & Constraints](Project%20Docs/Wiki/Design/risks-constraints.md)

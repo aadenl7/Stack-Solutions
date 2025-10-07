@@ -6,7 +6,7 @@ Financial Investment Website for Consulting Users on their Investment Decisions
 - **Wiki**
     - [Wiki Home](Project%20Docs/Wiki/Home)
     - [Design (Wiki)](Project%20Docs/Wiki/Design)
-    - [Prposal (Wiki)](Project%20Docs/Wiki/Prposal)
+    - [Proposal (Wiki)](Project%20Docs/Wiki/Proposal)
 
 - **In-Repo Drafts (reviewed via PRs)**
   - [Design: User Stories & Acceptance](Project%20Docs/design/user-stories.md)

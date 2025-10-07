@@ -1,5 +1,6 @@
 ## STACK SOLUTIONS
 **Project Docs**
+
 Financial Investment Website for Consulting Users on their Investment Decisions
 
 - **Wiki**

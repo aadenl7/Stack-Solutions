@@ -13,3 +13,8 @@ meeting etuquette
 PR tone
 - concise and productive feedback
 - timely responses
+
+Summary of discussion
+- colour scheme: minimalist and green palatte
+- reduce clunkiness of visuals
+- add previews to site actions

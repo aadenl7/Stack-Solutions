@@ -1,0 +1,24 @@
+{
+  "name": "asset-investment-website",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranvos/Asset-Investment-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pranvos/Asset-Investment-Website/issues"
+  },
+  "homepage": "https://github.com/Pranvos/Asset-Investment-Website#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

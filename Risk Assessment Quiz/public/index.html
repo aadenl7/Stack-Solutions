@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Profile Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .question { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        label { display: block; margin-bottom: 5px; }
+        .result { margin-top: 30px; padding: 15px; border: 2px solid #007bff; border-radius: 8px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>Investment Risk Profile Quiz</h1>
+    <form id="quiz-form">
+        <div class="question">
+            <p>1. What is your primary investment goal?</p>
+            <label><input type="radio" name="q1" value="a" required> a) Preserve my capital</label>
+            <label><input type="radio" name="q1" value="b"> b) Grow steadily with some risk</label>
+            <label><input type="radio" name="q1" value="c"> c) Maximize growth, even with high risk</label>
+        </div>
+
+        <div class="question">
+            <p>2. How long do you plan to invest before needing this money?</p>
+            <label><input type="radio" name="q2" value="a" required> a) Less than 3 years</label>
+            <label><input type="radio" name="q2" value="b"> b) 3–10 years</label>
+            <label><input type="radio" name="q2" value="c"> c) More than 10 years</label>
+        </div>
+
+        <div class="question">
+            <p>3. How would you react if your portfolio dropped 15% in a year?</p>
+            <label><input type="radio" name="q3" value="a" required> a) Sell immediately to avoid more losses</label>
+            <label><input type="radio" name="q3" value="b"> b) Wait it out, but feel uneasy</label>
+            <label><input type="radio" name="q3" value="c"> c) Buy more because prices are low</label>
+        </div>
+
+        <div class="question">
+            <p>4. How much of your savings are you comfortable putting in higher-risk assets (stocks, real estate, etc.)?</p>
+            <label><input type="radio" name="q4" value="a" required> a) Less than 30%</label>
+            <label><input type="radio" name="q4" value="b"> b) Around half</label>
+            <label><input type="radio" name="q4" value="c"> c) More than 70%</label>
+        </div>
+
+        <div class="question">
+            <p>5. If you received $100,000 tomorrow, how would you invest it?</p>
+            <label><input type="radio" name="q5" value="a" required> a) Mostly in cash, GICs, or bonds</label>
+            <label><input type="radio" name="q5" value="b"> b) A mix of safe and growth investments</label>
+            <label><input type="radio" name="q5" value="c"> c) Mostly in stocks, real estate, or high-growth opportunities</label>
+        </div>
+
+        <button type="submit" id="submit-button">Get My Risk Profile</button>
+    </form>
+
+    <div class="result" id="result">
+        </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            
+            const form = event.target;
+            const submitButton = document.getElementById('submit-button');
+            const resultDiv = document.getElementById('result');
+            const answers = [];
+            
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Processing...';
+
+            // Collect and validate answers
+            for (let i = 1; i <= 5; i++) {
+                const checkedInput = form.querySelector(`input[name="q${i}"]:checked`);
+                
+                if (!checkedInput) {
+                    alert(`Please answer Question ${i}.`);
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Get My Risk Profile';
+                    return; 
+                }
+                answers.push(checkedInput.value);
+            }
+
+            // Send the answers
+            try {
+                resultDiv.innerHTML = 'Calculating risk profile...';
+                
+                const response = await fetch('/run-quiz', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ answers: answers })
+                });
+
+                const resultText = await response.text();
+                
+                // Handle response
+                if (!response.ok) {
+                    resultDiv.innerHTML = `<h2>Error: Could not calculate profile</h2>${resultText}`;
+                    resultDiv.style.borderColor = 'red';
+                    console.error('Server responded with an error:', resultText);
+                    return;
+                }
+
+                resultDiv.innerHTML = `<h2>Your Risk Profile:</h2>${resultText}`;
+                resultDiv.style.borderColor = '#28a745'; 
+
+            } catch (error) {
+                console.error('Fetch error:', error);
+                resultDiv.innerHTML = 'A network error occurred. Please ensure the Node.js server is running.';
+                resultDiv.style.borderColor = 'orange';
+            } finally {
+                // Re-enable the button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Get My Risk Profile';
+            }
+        });
+    </script>
+</body>
+</html>

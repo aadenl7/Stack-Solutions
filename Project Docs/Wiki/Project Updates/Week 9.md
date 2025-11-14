@@ -29,7 +29,7 @@
 
 
 ### Evidence & Links (paste URLs): 
-• https://yuoffice-my.sharepoint.com/personal/tonyl_yorku_ca/_layouts/15/stream.aspx?id=%2Fpersonal%2Ftonyl%5Fyorku%5Fca%2FDocuments%2FIMG%5F3552%2Emov&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E99280f72%2Db7ac%2D481b%2Da5fb%2D6513004c1f76&isDarkMode=true
+• https://yuoffice.sharepoint.com/:v:/r/sites/YORK-Lab1-G-8/Shared%20Documents/G-8/project_updateWeek9_REC.mp4?csf=1&web=1&e=YcSgQK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJUZWFtcyIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJwb3N0cm9sbC1jb3B5bGluayIsInJlZmVycmFsUGxheWJhY2tTZXNzaW9uSWQiOiJkNzlkOTkwMS1kNzc5LTQ1MDgtYjY1Ni0yMWY4MmU0NTg5OGIifX0%3D
 
 ### Decisions made (owner, date): 
 • Decided to link all app features onto a html homepage for convenient access (Tony, October 25, 2025) 
